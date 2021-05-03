@@ -1,27 +1,4 @@
-// signUpWithAxios = () => {
-//   // axios
-//   const url = 'https://training.softech.cloud/api/users/register';
-//   const data = {
-//     email: this.state.email,
-//     password: this.state.password,
-//     fullname: this.state.fullname ,
-//   };
-
-//   axios
-//     .post(url, data)
-//     .then(response => {
-//       if (response.data.ok) {
-//         console.log('Đăng nhập thành công');
-//       } else {
-//         console.log('Đăng nhập không thành công');
-//       }
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     });
-// };
-
-import React from 'react';
+import React from "react";
 import {
   Text,
   StyleSheet,
@@ -32,34 +9,34 @@ import {
   TextInput,
   Switch,
   Alert,
-} from 'react-native';
-import {icons, images} from '../../navigator';
-import useRegisterEmail from './useRegisterEmail';
+} from "react-native";
+import { icons, images } from "../../IconsAndImages";
+import useRegisterEmail from "./useRegisterEmail";
 
-export default function SignUp({navigation}) {
+export default function SignUp({ navigation }) {
   const [loading, success, signUp] = useRegisterEmail();
   const [email, setEmail] = React.useState(null);
   const [password, setPassword] = React.useState(null);
   const [fullname, setFullname] = React.useState(null);
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <View style={styles.header}>
         <Image source={icons.eatmelogo} style={styles.logo} />
         <View style={styles.logoText}>
           <Text style={styles.headerText}>E a t m e</Text>
         </View>
-        <Text style={{fontSize: 30, fontWeight: 'bold', top: 40}}>
+        <Text style={{ fontSize: 30, fontWeight: "bold", top: 40 }}>
           Getting Started
         </Text>
         <View style={styles.welcomeText}>
-          <Text style={{fontSize: 16, fontWeight: 'normal'}}>
+          <Text style={{ fontSize: 16, fontWeight: "normal" }}>
             Create an account to continue!
           </Text>
         </View>
       </View>
       <View style={styles.email}>
-        <Text style={{fontSize: 14, top: 1, left: 0}}>Email</Text>
+        <Text style={{ fontSize: 14, top: 1, left: 0 }}>Email</Text>
         <View style={styles.emailInput}>
           <TextInput
             autoCapitalize="none"
@@ -67,14 +44,14 @@ export default function SignUp({navigation}) {
             keyboardType="email-address"
             placeholder="Enter your Email"
             value={email}
-            onChangeText={text => {
+            onChangeText={(text) => {
               setEmail(text);
             }}
           />
         </View>
       </View>
       <View style={styles.fullname}>
-        <Text style={{fontSize: 16, fontWeight: 'normal', top: 40}}>
+        <Text style={{ fontSize: 16, fontWeight: "normal", top: 40 }}>
           Fullname
         </Text>
         <View style={styles.fullNameInput}>
@@ -83,14 +60,14 @@ export default function SignUp({navigation}) {
             keyboardType="default"
             placeholder="Enter your Fullname"
             value={fullname}
-            onChangeText={text => {
+            onChangeText={(text) => {
               setFullname(text);
             }}
           />
         </View>
       </View>
       <View style={styles.password}>
-        <Text style={{fontSize: 16, fontWeight: 'normal', top: 40}}>
+        <Text style={{ fontSize: 16, fontWeight: "normal", top: 40 }}>
           Password
         </Text>
         <View style={styles.passWordInput}>
@@ -100,7 +77,7 @@ export default function SignUp({navigation}) {
             keyboardType="default"
             placeholder="Enter your Password"
             value={password}
-            onChangeText={text => {
+            onChangeText={(text) => {
               setPassword(text);
             }}
           />
@@ -111,12 +88,13 @@ export default function SignUp({navigation}) {
           style={styles.signInButton}
           onPress={() => {
             signUp();
-          }}>
+          }}
+        >
           <Text style={styles.signInText}>Sign Up</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.signInContainer}>
-        <Text style={{fontSize: 14, fontWeight: 'normal', color: '#898B9A'}}>
+        <Text style={{ fontSize: 14, fontWeight: "normal", color: "#898B9A" }}>
           Already have an account?
         </Text>
         <TouchableOpacity
@@ -126,37 +104,40 @@ export default function SignUp({navigation}) {
             marginLeft: 5,
           }}
           onPress={() => {
-            navigation.navigate('Login');
-          }}>
-          <Text style={{fontSize: 14, fontWeight: '500', color: '#FF6C44'}}>
+            navigation.navigate("Login");
+          }}
+        >
+          <Text style={{ fontSize: 14, fontWeight: "500", color: "#FF6C44" }}>
             Sign In
           </Text>
         </TouchableOpacity>
       </View>
       <View style={styles.fbSignIn}>
         <TouchableOpacity style={styles.fbButton}>
-          <Image source={icons.facebook} style={{width: 20, height: 20}} />
+          <Image source={icons.facebook} style={{ width: 20, height: 20 }} />
           <Text
             style={{
               fontSize: 16,
-              fontWeight: 'normal',
-              color: 'white',
+              fontWeight: "normal",
+              color: "white",
               marginLeft: 5,
-            }}>
+            }}
+          >
             Continue with Facebook
           </Text>
         </TouchableOpacity>
       </View>
       <View style={styles.ggSignIn}>
         <TouchableOpacity style={styles.ggButton}>
-          <Image source={icons.google} style={{width: 20, height: 20}} />
+          <Image source={icons.google} style={{ width: 20, height: 20 }} />
           <Text
             style={{
               fontSize: 16,
-              fontWeight: 'normal',
-              color: 'black',
+              fontWeight: "normal",
+              color: "black",
               marginLeft: 5,
-            }}>
+            }}
+          >
             Continue with Google
           </Text>
         </TouchableOpacity>
@@ -164,7 +145,7 @@ export default function SignUp({navigation}) {
     </View>
   );
 }
-const WIDTH = Dimensions.get('screen').width;
+const WIDTH = Dimensions.get("screen").width;
 
 const styles = StyleSheet.create({
   header: {
@@ -172,7 +153,7 @@ const styles = StyleSheet.create({
     height: 60,
     top: 48,
     left: 92,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   logo: {
     width: 60,
@@ -182,7 +163,7 @@ const styles = StyleSheet.create({
     left: 20,
   },
   logoText: {
-    position: 'absolute',
+    position: "absolute",
     width: 110,
     height: 40,
     top: 15,
@@ -190,8 +171,8 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 25,
-    color: '#FF6C44',
-    fontWeight: 'bold',
+    color: "#FF6C44",
+    fontWeight: "bold",
   },
   welcomeText: {
     width: WIDTH - 71 * 2,
@@ -199,7 +180,7 @@ const styles = StyleSheet.create({
     top: 40,
   },
   email: {
-    position: 'absolute',
+    position: "absolute",
     width: WIDTH - 24 * 2,
     height: 81,
     top: 200,
@@ -210,10 +191,10 @@ const styles = StyleSheet.create({
     height: 56,
     top: 20,
     borderRadius: 8,
-    backgroundColor: '#F5F5F8',
+    backgroundColor: "#F5F5F8",
   },
   fullname: {
-    position: 'absolute',
+    position: "absolute",
     width: WIDTH - 24 * 2,
     height: 81,
     top: 260,
@@ -224,10 +205,10 @@ const styles = StyleSheet.create({
     height: 56,
     top: 50,
     borderRadius: 8,
-    backgroundColor: '#F5F5F8',
+    backgroundColor: "#F5F5F8",
   },
   password: {
-    position: 'absolute',
+    position: "absolute",
     width: WIDTH - 24 * 2,
     height: 81,
     top: 350,
@@ -238,7 +219,7 @@ const styles = StyleSheet.create({
     height: 56,
     top: 50,
     borderRadius: 8,
-    backgroundColor: '#F5F5F8',
+    backgroundColor: "#F5F5F8",
   },
   signUpContainer: {
     width: WIDTH - 24 * 2,
@@ -250,14 +231,14 @@ const styles = StyleSheet.create({
     width: WIDTH - 24 * 2,
     height: 56,
     borderRadius: 8,
-    backgroundColor: '#FF6C44',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#FF6C44",
+    justifyContent: "center",
+    alignItems: "center",
   },
   signInText: {
     fontSize: 18,
-    fontWeight: 'normal',
-    color: 'white',
+    fontWeight: "normal",
+    color: "white",
   },
   fbSignIn: {
     width: WIDTH - 24 * 2,
@@ -268,11 +249,11 @@ const styles = StyleSheet.create({
   fbButton: {
     width: WIDTH - 24 * 2,
     height: 50,
-    backgroundColor: '#3C5A99',
+    backgroundColor: "#3C5A99",
     borderRadius: 8,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   ggSignIn: {
     width: WIDTH - 24 * 2,
@@ -283,18 +264,18 @@ const styles = StyleSheet.create({
   ggButton: {
     width: WIDTH - 24 * 2,
     height: 50,
-    backgroundColor: '#F5F5F8',
+    backgroundColor: "#F5F5F8",
     borderRadius: 8,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   },
   signInContainer: {
     width: WIDTH - 68 * 2,
     left: 68,
     height: 20,
     top: 455,
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
   },
 });

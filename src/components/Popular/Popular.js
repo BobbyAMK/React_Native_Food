@@ -12,7 +12,7 @@ import {
   RefreshControl,
   ActivityIndicator,
 } from "react-native";
-import { icons, images } from "../../navigator";
+import { icons, images } from "../../IconsAndImages";
 import usePopular from "./usePopular";
 
 const renderPopular = ({ item, index }) => {

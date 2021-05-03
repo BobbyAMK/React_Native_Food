@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
-import { icons } from ".";
+import { icons } from "../IconsAndImages";
 import HomeScreen from "../components/Home/HomeScreen";
 import CartScreen from "../components/Cart/CartScreen";
 import FavoriteScreen from "../components/Favorite/FavoriteScreen";

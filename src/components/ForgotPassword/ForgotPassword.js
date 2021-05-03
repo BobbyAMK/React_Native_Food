@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import {
   Text,
   StyleSheet,
@@ -9,22 +9,22 @@ import {
   TextInput,
   Switch,
   Alert,
-} from 'react-native';
-import {icons, images, data} from '../../navigator';
-import axios from 'axios';
+} from "react-native";
+import { icons, images, data } from "../../IconsAndImages";
+import axios from "axios";
 
-const WIDTH = Dimensions.get('screen').width;
+const WIDTH = Dimensions.get("screen").width;
 
 export default class ForgotPassword extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'dinhhbt13121999@gmail.com',
+      email: "dinhhbt13121999@gmail.com",
     };
   }
   render() {
     return (
-      <View style={{flex: 1}}>
+      <View style={{ flex: 1 }}>
         <View style={styles.header}>
           <Image source={icons.eatmelogo} style={styles.logo} />
           <View style={styles.logoText}>
@@ -33,24 +33,25 @@ export default class ForgotPassword extends Component {
           <Text
             style={{
               fontSize: 30,
-              fontWeight: 'bold',
+              fontWeight: "bold",
               top: 40,
               width: 270,
               right: 20,
-            }}>
+            }}
+          >
             Password Recovery
           </Text>
           <View style={styles.welcomeText}>
-            <Text style={{fontSize: 16, fontWeight: 'normal'}}>
+            <Text style={{ fontSize: 16, fontWeight: "normal" }}>
               Please enter your email address to recover
             </Text>
-            <Text style={{fontSize: 16, fontWeight: 'normal'}}>
+            <Text style={{ fontSize: 16, fontWeight: "normal" }}>
               your password
             </Text>
           </View>
         </View>
         <View style={styles.email}>
-          <Text style={{fontSize: 14, top: 1, left: 0}}>Email</Text>
+          <Text style={{ fontSize: 14, top: 1, left: 0 }}>Email</Text>
           <View style={styles.emailInput}>
             <TextInput
               autoCapitalize="none"
@@ -58,14 +59,15 @@ export default class ForgotPassword extends Component {
               keyboardType="email-address"
               placeholder="Enter your Email"
               value={this.state.email}
-              onChangeText={text => this.setState({email: text})}
+              onChangeText={(text) => this.setState({ email: text })}
             />
           </View>
         </View>
         <View style={styles.sendEmailContainer}>
           <TouchableOpacity
             style={styles.sendEmailButton}
-            onPress={this.onSendEmail}>
+            onPress={this.onSendEmail}
+          >
             <Text style={styles.sendEmailText}>Send Email</Text>
           </TouchableOpacity>
         </View>
@@ -73,21 +75,21 @@ export default class ForgotPassword extends Component {
     );
   }
   onSendEmail = () => {
-    const url = 'https://training.softech.cloud/api/users/forgot-password';
+    const url = "https://training.softech.cloud/api/users/forgot-password";
     const data = {
-      email: 'dinhhbt13121999@gmail.com',
+      email: "dinhhbt13121999@gmail.com",
     };
     axios
       .post(url, data)
-      .then(response => {
+      .then((response) => {
         console.log(response.data);
         if (response.data.success) {
-          Alert.alert('Check your email inbox');
+          Alert.alert("Check your email inbox");
         } else {
-          Alert.alert('Invalid email');
+          Alert.alert("Invalid email");
         }
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
   };
@@ -99,7 +101,7 @@ const styles = StyleSheet.create({
     height: 60,
     top: 48,
     left: 92,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   logo: {
     width: 60,
@@ -109,7 +111,7 @@ const styles = StyleSheet.create({
     left: 20,
   },
   logoText: {
-    position: 'absolute',
+    position: "absolute",
     width: 110,
     height: 40,
     top: 15,
@@ -117,20 +119,20 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 25,
-    color: '#FF6C44',
-    fontWeight: 'bold',
+    color: "#FF6C44",
+    fontWeight: "bold",
   },
   welcomeText: {
     width: WIDTH - 40 * 2,
     height: 30,
     top: 60,
     right: 50,
-    justifyContent: 'center',
-    alignContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
   },
   email: {
-    position: 'absolute',
+    position: "absolute",
     width: WIDTH - 24 * 2,
     height: 81,
     top: 252,
@@ -141,7 +143,7 @@ const styles = StyleSheet.create({
     height: 56,
     top: 20,
     borderRadius: 8,
-    backgroundColor: '#F5F5F8',
+    backgroundColor: "#F5F5F8",
   },
   sendEmailContainer: {
     width: WIDTH - 24 * 2,
@@ -153,13 +155,13 @@ const styles = StyleSheet.create({
     width: WIDTH - 24 * 2,
     height: 56,
     borderRadius: 8,
-    backgroundColor: '#FF6C44',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#FF6C44",
+    justifyContent: "center",
+    alignItems: "center",
   },
   sendEmailText: {
     fontSize: 18,
-    fontWeight: 'normal',
-    color: 'white',
+    fontWeight: "normal",
+    color: "white",
   },
 });

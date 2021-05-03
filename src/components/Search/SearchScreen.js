@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   Text,
@@ -8,10 +8,10 @@ import {
   TouchableOpacity,
   TextInput,
   Dimensions,
-} from 'react-native';
-import {icons} from '../../navigator';
+} from "react-native";
+import { icons } from "../../IconsAndImages";
 
-export default function SearchScreen({navigation}) {
+export default function SearchScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Image source={icons.eatmelogo} style={styles.logo} />
@@ -34,32 +34,32 @@ export default function SearchScreen({navigation}) {
   );
 }
 
-const WIDTH = Dimensions.get('screen').width;
+const WIDTH = Dimensions.get("screen").width;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   logo: {
-    position: 'absolute',
+    position: "absolute",
     width: 60,
     height: 60,
     borderRadius: 12,
     top: 35,
   },
   header: {
-    position: 'absolute',
+    position: "absolute",
     top: 100,
   },
   headerText: {
     fontSize: 30,
-    fontWeight: 'bold',
-    color: '#FF6C44',
+    fontWeight: "bold",
+    color: "#FF6C44",
   },
   search: {
-    position: 'absolute',
+    position: "absolute",
     width: WIDTH - 24 * 2,
     height: 81,
     top: 150,
@@ -71,6 +71,6 @@ const styles = StyleSheet.create({
     top: 20,
     borderRadius: 8,
     left: 8,
-    backgroundColor: '#F5F5F8',
+    backgroundColor: "#F5F5F8",
   },
 });

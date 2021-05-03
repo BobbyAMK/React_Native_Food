@@ -1,6 +1,6 @@
-import React, {Component, useState} from 'react';
-import {Text, StyleSheet, View, Image, TouchableOpacity} from 'react-native';
-import {icons} from '../../navigator';
+import React, { Component, useState } from "react";
+import { Text, StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import { icons } from "../../IconsAndImages";
 
 export default function StarRating() {
   const [defaultRating, setDefaultRating] = useState(0);
@@ -13,7 +13,8 @@ export default function StarRating() {
           <TouchableOpacity
             activeOpacity={0.6}
             key={item}
-            onPress={() => setDefaultRating(item)}>
+            onPress={() => setDefaultRating(item)}
+          >
             <Image
               style={styles.star}
               source={
@@ -29,15 +30,15 @@ export default function StarRating() {
 
 const styles = StyleSheet.create({
   starContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    position: 'absolute',
+    flexDirection: "row",
+    justifyContent: "center",
+    position: "absolute",
     top: 380,
   },
   star: {
     width: 32,
     height: 32,
-    resizeMode: 'cover',
+    resizeMode: "cover",
     margin: 10,
   },
 });

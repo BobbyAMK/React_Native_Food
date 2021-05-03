@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import {
   Text,
   StyleSheet,
@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
   FlatList,
   Image,
-} from 'react-native';
-import {icons, images, data} from '../../navigator';
+} from "react-native";
+import { icons, images, data } from "../../IconsAndImages";
 
 export default class HintCategory extends Component {
   constructor(props) {
@@ -20,39 +20,41 @@ export default class HintCategory extends Component {
     return <View>{this.renderHintCategory()}</View>;
   }
 
-  getCategoryById = id => {
-    let category = data.categoryData.filter(a => a.id == id);
+  getCategoryById = (id) => {
+    let category = data.categoryData.filter((a) => a.id == id);
     if (category.length > 0) return category[0].name;
-    return '';
+    return "";
   };
 
   renderHintCategory = () => {
-    const renderItem = ({item}) => {
+    const renderItem = ({ item }) => {
       return (
         <TouchableOpacity
           style={{
             paddingBottom: 15,
             borderRadius: 30,
-            backgroundColor: 'white',
+            backgroundColor: "white",
             marginBottom: 10,
             marginLeft: 10,
             width: 350,
             height: 150,
-          }}>
+          }}
+        >
           <View
             style={{
               width: 90,
               height: 90,
               borderRadius: 25,
-            }}>
+            }}
+          >
             <Image
               source={item.photo}
               resizeMode="cover"
               style={{
                 width: 90,
                 height: 90,
-                top: '25%',
-                left: '10%',
+                top: "25%",
+                left: "10%",
                 borderRadius: 25,
               }}
             />
@@ -61,39 +63,43 @@ export default class HintCategory extends Component {
             style={{
               fontSize: 20,
               left: 110,
-              bottom: '40%',
-            }}>
+              bottom: "40%",
+            }}
+          >
             {item.name}
           </Text>
-          <View style={{flexDirection: 'row', left: 110, bottom: 50}}>
+          <View style={{ flexDirection: "row", left: 110, bottom: 50 }}>
             <Image
               source={icons.star}
               style={{
                 width: 20,
                 height: 20,
-                tintColor: 'orange',
+                tintColor: "orange",
                 marginTop: 5,
               }}
             />
             <Text
               style={{
-                color: 'black',
+                color: "black",
                 marginLeft: 5,
                 marginTop: 5,
                 fontSize: 18,
-              }}>
+              }}
+            >
               {item.rating}
             </Text>
-            <View style={{flexDirection: 'row', left: 10}}>
-              {item.categories.map(categoryId => {
+            <View style={{ flexDirection: "row", left: 10 }}>
+              {item.categories.map((categoryId) => {
                 return (
-                  <View style={{flexDirection: 'row'}} key={categoryId}>
-                    <Text style={{marginTop: 5, fontSize: 18}}>
+                  <View style={{ flexDirection: "row" }} key={categoryId}>
+                    <Text style={{ marginTop: 5, fontSize: 18 }}>
                       {this.getCategoryById(categoryId)}
                     </Text>
-                    <Text style={{marginTop: 5, fontSize: 18, color: 'black'}}>
-                      {' '}
-                      ..{' '}
+                    <Text
+                      style={{ marginTop: 5, fontSize: 18, color: "black" }}
+                    >
+                      {" "}
+                      ..{" "}
                     </Text>
                   </View>
                 );
@@ -102,11 +108,12 @@ export default class HintCategory extends Component {
           </View>
           <View
             style={{
-              position: 'absolute',
+              position: "absolute",
               bottom: 35,
               left: 115,
-            }}>
-            {[1].map(priceRating => {
+            }}
+          >
+            {[1].map((priceRating) => {
               return (
                 <Text
                   key={priceRating}
@@ -114,8 +121,9 @@ export default class HintCategory extends Component {
                     marginTop: 5,
                     fontSize: 18,
                     color:
-                      priceRating <= item.priceRating ? 'black' : 'darkgrey',
-                  }}>
+                      priceRating <= item.priceRating ? "black" : "darkgrey",
+                  }}
+                >
                   ${item.priceRating}
                 </Text>
               );
@@ -130,12 +138,12 @@ export default class HintCategory extends Component {
         data={this.state.restaurants}
         renderItem={renderItem}
         keyExtractor={(item, index) => {
-          return 'sth-' + item.id;
+          return "sth-" + item.id;
         }}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
-          justifyContent: 'center',
-          alignItem: 'center',
+          justifyContent: "center",
+          alignItem: "center",
           paddingHorizontal: 20,
         }}
       />

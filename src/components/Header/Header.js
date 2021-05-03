@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import {
   Text,
   StyleSheet,
@@ -7,9 +7,9 @@ import {
   TouchableOpacity,
   FlatList,
   TextInput,
-} from 'react-native';
+} from "react-native";
 
-import {images, icons, data} from '../../navigator';
+import { images, icons, data } from "../../IconsAndImages";
 
 export default class Header extends Component {
   render() {
@@ -17,44 +17,47 @@ export default class Header extends Component {
       <View style={styles.headerContainer}>
         <TouchableOpacity
           style={{
-            position: 'absolute',
+            position: "absolute",
             width: 50,
             height: 50,
             borderWidth: 1,
             borderRadius: 10,
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderColor: 'black',
-          }}>
+            justifyContent: "center",
+            alignItems: "center",
+            borderColor: "black",
+          }}
+        >
           <Image
             style={{
               width: 20,
               height: 20,
-              position: 'absolute',
+              position: "absolute",
               borderRadius: 8,
-              tintColor: 'black',
+              tintColor: "black",
             }}
             source={icons.list}
           />
         </TouchableOpacity>
         <View
           style={{
-            position: 'absolute',
-            justifyContent: 'center',
-            alignItems: 'center',
+            position: "absolute",
+            justifyContent: "center",
+            alignItems: "center",
             width: 200,
             height: 60,
             left: 75,
-          }}>
+          }}
+        >
           <Text style={styles.headerText}>Home</Text>
         </View>
         <TouchableOpacity
           style={{
-            position: 'absolute',
+            position: "absolute",
             width: 40,
             height: 40,
             borderRadius: 8,
-          }}>
+          }}
+        >
           <Image style={styles.avatarImage} source={images.avatar_3} />
         </TouchableOpacity>
       </View>
@@ -64,23 +67,23 @@ export default class Header extends Component {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    position: 'absolute',
+    position: "absolute",
     marginLeft: 24,
     marginRight: 24,
     marginTop: 40,
-    backgroundColor: 'white',
+    backgroundColor: "white",
   },
   headerText: {
-    position: 'absolute',
+    position: "absolute",
     width: 70,
     height: 30,
-    left: '40%',
+    left: "40%",
     top: 10,
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   avatarImage: {
-    position: 'absolute',
+    position: "absolute",
     width: 40,
     height: 40,
     left: 311,

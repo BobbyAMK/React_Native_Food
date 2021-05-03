@@ -7,7 +7,7 @@ import {
   Dimensions,
   TouchableOpacity,
 } from "react-native";
-import { icons } from "../../navigator";
+import { icons } from "../../IconsAndImages";
 
 export default function OnBoardingScreen1({ navigation }) {
   return (

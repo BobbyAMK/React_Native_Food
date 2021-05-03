@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import {
   Text,
   StyleSheet,
@@ -9,11 +9,11 @@ import {
   FlatList,
   Dimensions,
   ActivityIndicator,
-} from 'react-native';
-import {icons, images} from '../../navigator';
-import StarRating from './StarRating';
+} from "react-native";
+import { icons, images } from "../../IconsAndImages";
+import StarRating from "./StarRating";
 
-const WIDTH = Dimensions.get('screen').width;
+const WIDTH = Dimensions.get("screen").width;
 
 export default function ReviewRider() {
   return (
@@ -31,17 +31,17 @@ export default function ReviewRider() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   headerText: {
-    position: 'absolute',
+    position: "absolute",
     top: 20,
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   riderImage: {
-    position: 'absolute',
+    position: "absolute",
     top: 100,
     width: 120,
     height: 120,
@@ -49,23 +49,23 @@ const styles = StyleSheet.create({
   },
   riderName: {
     fontSize: 22,
-    fontWeight: 'bold',
-    position: 'absolute',
+    fontWeight: "bold",
+    position: "absolute",
     top: 250,
   },
   riderInfo: {
-    position: 'absolute',
+    position: "absolute",
     top: 290,
     fontSize: 16,
-    fontWeight: 'normal',
+    fontWeight: "normal",
   },
   rating: {
-    position: 'absolute',
+    position: "absolute",
     top: 350,
     fontSize: 20,
-    fontWeight: '500',
+    fontWeight: "500",
   },
   tips: {
-    position: 'absolute',
+    position: "absolute",
   },
 });

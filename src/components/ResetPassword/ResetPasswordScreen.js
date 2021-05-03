@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Dimensions,
   StyleSheet,
@@ -6,10 +6,10 @@ import {
   View,
   Image,
   TouchableOpacity,
-} from 'react-native';
-import {icons} from '../../navigator';
+} from "react-native";
+import { icons } from "../../IconsAndImages";
 
-export default function ResetPasswordScreen({navigation}) {
+export default function ResetPasswordScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -18,25 +18,27 @@ export default function ResetPasswordScreen({navigation}) {
           <Text style={styles.headerText}>E a t m e</Text>
         </View>
         <View style={styles.welcomeText}>
-          <Text style={{fontSize: 24, fontWeight: 'bold'}}>
+          <Text style={{ fontSize: 24, fontWeight: "bold" }}>
             CONGRATULATION!
           </Text>
           <Text
             style={{
               fontSize: 14,
-              fontWeight: 'normal',
-              color: '#525C67',
+              fontWeight: "normal",
+              color: "#525C67",
               top: 10,
-            }}>
+            }}
+          >
             You successfully rest your password.
           </Text>
           <Text
             style={{
               fontSize: 14,
-              fontWeight: 'normal',
-              color: '#525C67',
+              fontWeight: "normal",
+              color: "#525C67",
               top: 10,
-            }}>
+            }}
+          >
             Now you are good to go
           </Text>
         </View>
@@ -45,16 +47,17 @@ export default function ResetPasswordScreen({navigation}) {
       <TouchableOpacity
         style={styles.done}
         onPress={() => {
-          navigation.navigate('Login');
-        }}>
-        <Text style={{fontSize: 16, fontWeight: '600', color: 'white'}}>
+          navigation.navigate("Login");
+        }}
+      >
+        <Text style={{ fontSize: 16, fontWeight: "600", color: "white" }}>
           Jump to Log In
         </Text>
       </TouchableOpacity>
     </View>
   );
 }
-const WIDTH = Dimensions.get('screen').width;
+const WIDTH = Dimensions.get("screen").width;
 
 const styles = StyleSheet.create({
   container: {
@@ -65,7 +68,7 @@ const styles = StyleSheet.create({
     height: 60,
     top: 28,
     left: 92,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   logo: {
     width: 60,
@@ -75,7 +78,7 @@ const styles = StyleSheet.create({
     left: 20,
   },
   logoText: {
-    position: 'absolute',
+    position: "absolute",
     width: 110,
     height: 40,
     top: 15,
@@ -83,8 +86,8 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 25,
-    color: '#FF6C44',
-    fontWeight: 'bold',
+    color: "#FF6C44",
+    fontWeight: "bold",
     top: 16,
   },
   welcomeText: {
@@ -92,9 +95,9 @@ const styles = StyleSheet.create({
     height: 30,
     top: 80,
     right: 50,
-    justifyContent: 'center',
-    alignContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
   },
   congrat: {
     width: WIDTH - 44 * 2,
@@ -108,8 +111,8 @@ const styles = StyleSheet.create({
     top: 350,
     left: 24,
     borderRadius: 8,
-    backgroundColor: '#FF6C44',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: "#FF6C44",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

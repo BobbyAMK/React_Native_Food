@@ -7,7 +7,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
-import { images, icons } from "../../navigator";
+import { images, icons } from "../../IconsAndImages";
 import useCategories from "./useCategories";
 
 const renderCategories = ({ item, index }) => {

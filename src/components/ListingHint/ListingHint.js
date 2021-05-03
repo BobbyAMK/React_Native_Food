@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 import {
   Text,
   StyleSheet,
@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
   FlatList,
   Image,
-} from 'react-native';
+} from "react-native";
 
-import {icons, images, data} from '../../navigator';
+import { icons, images, data } from "../../IconsAndImages";
 
 export default class ListingHint extends Component {
   constructor(props) {
@@ -22,14 +22,14 @@ export default class ListingHint extends Component {
     return <View>{this.renderListingHint()}</View>;
   }
 
-  onSelectedHint = hint => {
-    let hintList = data.listingHint.filter(x => x.name.includes(hint.id));
-    this.setState({listing: hintList});
-    this.setState({setSelectedHint: hint});
+  onSelectedHint = (hint) => {
+    let hintList = data.listingHint.filter((x) => x.name.includes(hint.id));
+    this.setState({ listing: hintList });
+    this.setState({ setSelectedHint: hint });
   };
 
   renderListingHint = () => {
-    const renderItem = ({item}) => {
+    const renderItem = ({ item }) => {
       return (
         <TouchableOpacity
           key={item}
@@ -37,36 +37,38 @@ export default class ListingHint extends Component {
             width: 100,
             height: 50,
             padding: 10,
-            alignItems: 'center',
-            justifyContent: 'flex-start',
+            alignItems: "center",
+            justifyContent: "flex-start",
             borderRadius: 25,
             marginRight: 10,
-            flexDirection: 'row',
+            flexDirection: "row",
           }}
-          onPress={() => this.onSelectedHint(item)}>
+          onPress={() => this.onSelectedHint(item)}
+        >
           <Text
             style={{
               fontSize: 18,
-              fontWeight: '500',
+              fontWeight: "500",
               color:
-                this.state.setSelectedHint?.id == item.id ? 'orange' : 'black',
-            }}>
+                this.state.setSelectedHint?.id == item.id ? "orange" : "black",
+            }}
+          >
             {item.name}
           </Text>
         </TouchableOpacity>
       );
     };
     return (
-      <View style={{padding: 20}}>
+      <View style={{ padding: 20 }}>
         <FlatList
           data={data.listingHint}
-          keyExtractor={(item, index) => 'c-' + index}
+          keyExtractor={(item, index) => "c-" + index}
           horizontal
           showsHorizontalScrollIndicator={false}
           renderItem={renderItem}
           contentContainerStyle={{
-            justifyContent: 'center',
-            alignItems: 'center',
+            justifyContent: "center",
+            alignItems: "center",
           }}
         />
       </View>
