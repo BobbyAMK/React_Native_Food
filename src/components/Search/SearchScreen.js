@@ -1,4 +1,5 @@
 import React from "react";
+import { SafeAreaView } from "react-native";
 import {
   View,
   Text,
@@ -13,7 +14,7 @@ import { icons } from "../../IconsAndImages";
 
 export default function SearchScreen({ navigation }) {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Image source={icons.eatmelogo} style={styles.logo} />
       <View style={styles.header}>
         <Text style={styles.headerText}>SEARCHING</Text>
@@ -25,12 +26,10 @@ export default function SearchScreen({ navigation }) {
             autoCorrect={false}
             keyboardType="default"
             placeholder="Searching for something?"
-            // value={}
-            // onChangeText={text => this.setState({email: text})}
           />
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -47,11 +46,11 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 12,
-    top: 35,
+    top: 70,
   },
   header: {
     position: "absolute",
-    top: 100,
+    top: 150,
   },
   headerText: {
     fontSize: 30,
@@ -62,12 +61,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: WIDTH - 24 * 2,
     height: 81,
-    top: 150,
+    top: 200,
     left: 24,
   },
   searchInput: {
     width: WIDTH - 35 * 2,
-    height: 60,
+    height: 40,
     top: 20,
     borderRadius: 8,
     left: 8,
